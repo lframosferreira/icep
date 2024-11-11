@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage{amsmath}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 \title{Lista 1}
@@ -27,28 +28,29 @@
 		      \item (1.5.11) indução?
 	      \end{itemize}
 	\item \begin{itemize}
-		\item (2.8.3) Seja \(G\) um grafo com número cromático igual a \(\mathbb{X}(G)\). Sabemos que, para qualquer par de cores \(c_1, c_2\) da coloração mínima, deve existir ao menos uma aresta entre vértices \(v_1\), com cor \(c_1\), e \(v_2\), com cor \(c_2\). Caso contrário, todos os vértices com cor \(c_2\), poderiam ser coloridas com a cor \(c_1\) (sem perda de generalidade), o que seria contraditório com o fato da coloração ser mínima. Logo, para cada par de cores na coloração, deve existir ao menos uma aresta, e como cada aresta conecta exatamente dois vértices, temos que \(e(G) \geq \mathbb{X}(G) \choose 2\).
-  \item (2.8.9) Seja \(G\) um grafo bipartido. 
-  \item (2.8.15) A prova por ser feita por indução no número de arestas da árvore. A solução é trivial para o caso base em que \(e(T) = 1\). Para \(e(T) = 1\), \(T\) é uma aresta e trivialmente é subgrafo de qualquer grafo \(G\) com \(\delta(G) \geq 1\). Suponha que o resultado vale para qualquer árvore com \(k\) arestas. Seja \(T\) uma árvore qualquer com \(k + 1\) arestas e \(T' = T - \{v\}\) para alguma folha \(v \in V(T)\).
- \end{itemize}
+		      \item (2.8.3) Seja \(G\) um grafo com número cromático igual a \(\mathbb{X}(G)\). Sabemos que, para qualquer par de cores \(c_1, c_2\) da coloração mínima, deve existir ao menos uma aresta entre vértices \(v_1\), com cor \(c_1\), e \(v_2\), com cor \(c_2\). Caso contrário, todos os vértices com cor \(c_2\), poderiam ser coloridas com a cor \(c_1\) (sem perda de generalidade), o que seria contraditório com o fato da coloração ser mínima. Logo, para cada par de cores na coloração, deve existir ao menos uma aresta, e como cada aresta conecta exatamente dois vértices, temos que \(e(G) \ge \mathbb{X}(G) \choose 2\).
+		      \item (2.8.9) Seja \(G\) um grafo bipartido.
+		      \item (2.8.15) A prova por ser feita por indução no número de arestas da árvore. A solução é trivial para o caso base em que \(e(T) = 1\). Para \(e(T) = 1\), \(T\) é uma aresta e trivialmente é subgrafo de qualquer grafo \(G\) com \(\delta(G) \geq 1\). Suponha que o resultado vale para qualquer árvore com \(k\) arestas. Seja \(T\) uma árvore qualquer com \(k + 1\) arestas e \(T' = T - \{v\}\) para alguma folha \(v \in V(T)\).
+	      \end{itemize}
 
- \item 
- 
- \begin{itemize}
-		\item (3.5.1) 
-  		\item (3.5.5) e(g) > n^2/4  then g has at least floor(n/2) triangles
-    			for n = 1, 2, 3 trivial
-       				suppose true for k
-	   			lets show for k+1
-       				suppose k+1 is even
-       				let v be an arbitrary vertex of g, remove it
-				G - v has at least (k-1)/2 triangs. Adding v
-       				
-    		\item (3.5.6)
-      		\item (3.5.7)
-		\item (3.5.8)
-  		\item (3.5.9)
-\end{itemize
+	\item
+
+	      \begin{itemize}
+		      \item (3.5.1)
+		      \item (3.5.5)
+		            %  e(g) > n^2/4  then g has at least floor(n/2) triangles
+		            % 			for n = 1, 2, 3 trivial
+		            %    				suppose true for k
+		            % 			lets show for k+1
+		            %    				suppose k+1 is even
+		            %    				let v be an arbitrary vertex of g, remove it
+		            % G - v has at least (k-1)/2 triangs. Adding v
+
+		      \item (3.5.6)
+		      \item (3.5.7)
+		      \item (3.5.8)
+		      \item (3.5.9)
+	      \end{itemize}
 \end{enumerate}
 
 \end{document}
