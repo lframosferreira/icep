@@ -30,12 +30,18 @@
 				                  \caption{Questão 1.5.3 - a)}
 			                  \end{figure}
 			            \item
+                            Do lado esquerdo, temos \(\binom{n}{m} \binom{m}{k}\). Sabemos que \(\binom{n}{m}\) representa o número de subconjuntos de tamanho \(m\) de um conjunto com
+                            \(n\) elementos. Por sua vez, \(\binom{m}{k}\) representa o número de subconjuntos de tamanho \(k\) de um conjunto com \(m\) elementos. Desse modo, esse produto representa o número de maneiras de escolher \(k\) elementos de um conjunto de \(m\) elementos que foram previamente escolhidos de um conjunto de \(n\) elementos.
+                            Do lado direito da equação, temos \(\binom{n}{k} \binom{n - k}{m - k}\). Sabemos que \(\binom{n}{k}\) representa o número de subconjuntos de tamanho \(k\) de um conjunto de tamanho \(n\). \(\binom{n-k}{m-k}\), por sua vez, é o número de conjuntos de tamanho \(m-k\) de um conjunto de tamanho \(n-k\). O produto final então é o número de subconjuntos de tamanho \(k\) de um subconjunto de tamanho \(m\) escolhido de um conjunto de tamanho \(n\), assim como no lado esquerdo. Como ambos os lados representam o mesmo valor combinatório, eles são iguais. 
+                            Uma prova algébrica também pode ser obtida como visto abaixo.
 			                  \begin{figure}[H]
 				                  \centering
-				                  \includegraphics[width=0.8\textwidth]{images/153a.jpg}
+				                  \includegraphics[width=0.8\textwidth]{images/153c.jpg}
 				                  \caption{Questão 1.5.3 - b)}
 			                  \end{figure}
 			            \item
+                            O lado direito da equação \(\binom{n+1}{m+1}\) representa o número de maneiras de escolher \(m+1\) elementos de um conjunto de \(n+1\) elementos.
+                            O lado esquerdo da equação \(\sum_{k=m}^{n} \binom{k}{m}\), 
 			                  \begin{figure}[H]
 				                  \centering
 				                  \includegraphics[width=0.8\textwidth]{images/153c.jpg}
