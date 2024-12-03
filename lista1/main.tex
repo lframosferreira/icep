@@ -28,14 +28,15 @@
 			                  Olhando para o lado esquerdo, sabemos que \(\binom{n}{k} \binom{k}{m}\) representa o número de maneira de escolher
 			                  um conjunto \(S\) de \(k\) elementos dentre \(n\) elementos, e depois escolher um conjunto \(S'\) subconjunto de \(S\) com \(m\)
 			                  elementos. Somando esse valor onde \(k\) varia de \(m\) até \(n\) retorna o número de maneiras de fazer a divisão em conjuntos citada
-			                  de modo que o conjuunto \(S'\) final tenha tamanho \(m\).
+			                  de modo que o conjunto \(S'\) final tenha tamanho \(m\).
 			                  Podemos ntoar que o conjunto \(S'\) de tamanho \(m\) pode ser escolhido de \(\binom{n}{m}\) diferentes.
 			                  Dessas maneiras, podemos escolher \(2^{n - m}\) subconjutnos dos \(n\) elementos originais que não estão em \(S'\). Logo, existem
 			                  \(2^{n - m} \binom{n}{m}\) maneiras de fazer a divisão. Portanto, ambos lados da equação são iguais.
+			                  Podemos usar também um argumento algébrico nessa questão.
 
 			                  \begin{figure}[H]
 				                  \centering
-				                  \includegraphics[width=0.8\textwidth]{images/153a.jpg}
+				                  \includegraphics[width=0.8\textwidth]{images/153a.jpeg}
 				                  \caption{Questão 1.5.3 - a)}
 			                  \end{figure}
 			            \item
@@ -59,7 +60,7 @@
 			                  Essa igualdade também pode ser demonstrada algebricamente, como visto na imagem abaixo.
 			                  \begin{figure}[H]
 				                  \centering
-				                  \includegraphics[width=0.8\textwidth]{images/153c.jpg}
+				                  \includegraphics[width=0.8\textwidth]{images/153c.jpeg}
 				                  \caption{Questão 1.5.3 - c)}
 			                  \end{figure}
 		            \end{enumerate}
@@ -68,7 +69,15 @@
 	      \end{itemize}
 	\item \begin{itemize}
 		      \item OK (2.8.3) Seja \(G\) um grafo com número cromático igual a \(\mathcal{X}(G)\). Sabemos que, para qualquer par de cores \(c_1, c_2\) da coloração mínima, deve existir ao menos uma aresta entre vértices \(v_1\), com cor \(c_1\), e \(v_2\), com cor \(c_2\). Caso contrário, todos os vértices com cor \(c_2\), poderiam ser coloridas com a cor \(c_1\) (sem perda de generalidade), o que seria contraditório com o fato da coloração ser mínima. Logo, para cada par de cores na coloração, deve existir ao menos uma aresta, e como cada aresta conecta exatamente dois vértices, temos que \(e(G) \ge \binom{\mathcal{X}(G)}{2}\).
-		      \item (2.8.9) Seja \(G\) um grafo bipartido.
+		      \item OK (2.8.9) Seja \(G\) um grafo bipartido. Pelo teorema de Kõnig, o tamanho do emparelhamento máximo em \(G\) é
+		            igual ao tamanho do conjunto de cobertura por vértices (\textit{vertex cover}) mínimo de \(G\). Sabemos que o
+		            tamanho do \textit{vertex cover} mínimo é com certeza maior do que \(\frac{e(G)}{\Delta(G)}\). Note que o \textit{vertex cover} cobre todas as
+		            arestas do grafo, sendo que cada vértice \(v\) nele cobre no máximo \(\Delta(G)\) arestas. Portanto, se multiplicarmos \(\beta(G)\) , que é
+		            o tamanho do \textit{vertex cover} mínimo, por \(\Delta(G)\), obteremos um número maior que \(e(G)\). Logo, concluímos a afirmação.
+		            Algebricamente temos a seguinte prova:
+
+		            \[M(G) = \beta(G) \geq \frac{e(G)}{\Delta(G)}\]
+		            \[\beta(G)\Delta(G) \geq e(G)\]
 
 
 		      \item OK (2.8.15) A prova será feita considerando uma indexação diferente da usada no livro. Isso não altera a semântica do problema.
