@@ -112,13 +112,27 @@
 		            como queríamos demonstrar.
 
 		      \item (3.5.5)
-		            %  e(g) > n^2/4  then g has at least floor(n/2) triangles
-		            % 			for n = 1, 2, 3 trivial
-		            %    				suppose true for k
-		            % 			lets show for k+1
-		            %    				suppose k+1 is even
-		            %    				let v be an arbitrary vertex of g, remove it
-		            % G - v has at least (k-1)/2 triangs. Adding v
+		            Queremos provar que, se \(e(G) > \frac{n^2}{4}\), onde \(n\) é o número de vértices em \(G\),
+		            temos que \(G\) possui ao menos \(\lfloor\frac{n}{2}\rfloor\) triângulos.
+
+
+		            A prova pode ser feita dividindo o problemas em três casos diferentes. Primeiramente, suponha
+		            que \(e(G) \geq \frac{n^2}{4} + 2\). Pelo teorma 3.3.2 do livro, temos que \(G\) possui pelo menos
+		            \(\frac{2n}{3}\) triângulos, que com certeza é mais do que \(\lfloor\frac{n}{2}\rfloor\) triângulos.
+
+		            Em segundo lugar, suponha que \(e(G) = \frac{n^2}{4} + 1\). Consideremos o grafo \(H\), subgrafo de \(G\), de modo que
+		            \(H\) com uma aresta a menos, é o grafo bipartido completo \(K_{{\lfloor\frac{n}{2}\rfloor}, {\lceil\frac{n}{2}}\rceil}\).
+		            Neste caso, a única aresta que esta em \(G\) e não está em \(H\) é uma aresta entre dois vértices de uma mesma
+		            partição de \(H\). Tal arestas em \(G\) criaria no mínimo \(\lfloor\frac{n}{2}\rfloor\) triângulos em \(G\), pois para
+		            cada vértice da partição "oposta" à da aresta adicionada teremos um novo triângulo.
+
+		            Caso \(H\) não seja o grafo bipartido completo citado, temos que \(G\) é 2-longe de ser bipartido, o que, pleo teorema
+		            3.3.3 do livro, implica que \(G\) possui ao menos \(\frac{n}{6}(e(G) + 2 - \frac{n^2}{4})\) triângulos. Temos que:
+
+		            \[\frac{n}{6}(e(G) + 2 - \frac{n^2}{4}) = \frac{n}{6}(\frac{n^2}{4} + 1 + 2 - \frac{n^2}{4}) = \frac{3n}{6} = \frac{n}{2} \geq \lfloor\frac{n}{2}\rfloor\]
+
+		            Portanto, provamos o teorema.
+
 
 		      \item (3.5.6)
 		      \item (3.5.7)
