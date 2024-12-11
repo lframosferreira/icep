@@ -135,9 +135,30 @@
 
 
 		      \item (3.5.6)
+		            Queremos provas que, se \(e(G) \geq 2 ex(n, H)\), então \(G\) contêm pelo menos \(ex(n, H)\) cópias de \(H\).
+		            Suponha que \(G\) seja um grafo com exatamente \(ex(n, H)\) arestas. Desse modo, sabemos que \(G\) não contêm \(H\) como subgrafo.
+		            Note que, se qualquer nova aresta for adicionada, pelo menos uma cópia de \(H\) aparecerá como subgrafo do novo grafo criado com a adição da aresta.
+		            Isso decorre da definição direta do número extremal \(ex(n, H)\). Como \(G\) contêm mais do que \(2 ex(n, H)\) arestas, note que, para cada aresta a mais adicionada, é garantida a existência
+		            de ao menos mais uma cópia de \(H\) em \(G\). Logo, pelo menos \(ex(n, H)\) cópias diferentes de \(H\) existem \(G\), podendo ser potencialmente mais.
+
 		      \item (3.5.7)
 		      \item (3.5.8)
 		      \item (3.5.9)
+
+		            Sabemos pelo teorema de Erdos e Stone que, se \(H\) for um grafo não vazio, então:
+
+		            \[ex(n, H) = (1 - \frac{1}{\mathcal{X}(H) - 1} + o(1))\frac{n^2}{2}\]
+
+		            Como sabemos, o número cromático de \(C_5\) é igual a 3 (podemos achar esse valor simplesmente brutando o número de cores). Substituindo na equação, temos:
+
+		            \[ex(n, C_5) = (1 - \frac{1}{3 - 1} + o(1))\frac{n^2}{2} = (\frac{1}{2} + o(1))\frac{n^2}{2}\]
+
+		            Como assumimos que \(n\) é suficientemente grande, temos que, pela definição da notação "ozinho", \(o(1)\) tende a 0. Logo, podemos substituir esse valor na equação e alterar a igualdade para uma desigualdade:
+
+		            \[ex(n, C_5) \leq (\frac{1}{2})\frac{n^2}{2} \leq \frac{n^2}{4}\]
+
+		            Como queríamos demonstrar inicialmente.
+
 	      \end{itemize}
 \end{enumerate}
 
