@@ -18,7 +18,6 @@
 \begin{enumerate}
 
 	\item Capítulo lido
-	      %imagem de trabalho feito
 	\item
 	      \begin{itemize}
 		      \item (1.5.3)
@@ -108,7 +107,7 @@
 		            um \(K_{k + 1}\) no grafo e isso aumentaria o número de arestas dele, um absurdo pois assumimos que o número de arestas era máximo.
 
 		            Seja agora \(H = G - K_k\). Pela hipótese, \(|E(H)| \leq (1 - \frac{1}{n})\frac{n^2}{2}\).
-		            Logo temos que \(|E(G)| \leq (1 - \frac{1}{n})\frac{n^2}{2} + (n-k)(k-1) + \binom{n}{2}\),
+		            Logo temos que \(|E(G)| \leq (1 - \frac{1}{n})\frac{n^2}{2} + (n-k)(k-1) + \binom{n}{2}\),
 		            como queríamos demonstrar.
 
 		      \item (3.5.5)
@@ -143,6 +142,12 @@
 
 		      \item (3.5.7)
 		      \item (3.5.8)
+		            Queremos mostrar que todo grafo com número suficientemente grandes de vértices,
+		            para um \(k\) natural fixo, se \(e(G) \geq \frac{n^2}{4}\) possui um subgrafo \(H\) com
+		            pelo menos \(k\) vértices, então \(\delta(H) \geq \frac{v(H)}{2}\).
+		            Por contradição, vamos supor que a afirmativa é falsa. Portanto, todo subgrafo \(H\)
+		            com \(k\) vértices ou mais deve ter algum vértice \(v\)com grau pequeno, isto é, \(d(v) < \frac{v(H)}{2}\).
+
 		      \item (3.5.9)
 
 		            Sabemos pelo teorema de Erdos e Stone que, se \(H\) for um grafo não vazio, então:
