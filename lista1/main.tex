@@ -65,9 +65,17 @@
 		            \end{enumerate}
 		      \item OK (1.5.6) Seja \(G\) um grafo qualquer com \(n\) vértices. Suponha, por contradição, que não existam dois vértices em \(G\) com o mesmo grau. Logo, como existem \(n\) vértices no grafo, os \(n\) possíveis graus que um vértice pode ter são \(\{0, 1, \dots, n-1\}\), logo podemos dizer que estes são os graus dos vértices de \(G\). No entanto, isso é absurdo, pois existiram um vértice de grau 0 e um vértice de grau \(n-1\) em um grafo com \(n\) vértices, o que não faz sentido. Logo, a premisa inicial estava errada, e podemos afirmar que todo grafo com \(n\) vértices, \(n \geq 2\), possui dois vértices com o mesmo grau.
 		      \item (1.5.11) Em resumo, de modo menos formal, o que a questão pede é para provar que todo número pode ser
-		            escrito como a soma de binomiais únicos. A prova pode ser feita da seguinte maneira:
+		            escrito como a soma de binomiais únicos. A prova pode ser feita da seguinte maneira, utilizando indução:
 
+		            \begin{itemize}
+			            \item \texttt{CASO BASE:} Seja \(n=0\). Este valor pode ser representado como a soma de \(0\) binômios diferentes.
+			            \item \texttt{HIPÓTESE INDUTIVA:} Vamos assumir que todo número menor que \(n\) pode ser representado como a soma de binômios distintos.
+			            \item \texttt{PASSO INDUTIVO:} Seja \(n\) o valor que queremos mostrar existir uma somatório de binômios distintos que se iguale a \(n\). Seja \(b\) um binômio tal que \(b = \binom(a_k, k)\) é o maior binômio
+			                  menor ou igual a \(n\). Se for igual podemos parar. Se for menor, resolvemos o problema para \(n - b\). Como esse valor é menor que \(n\), sabemos que ele possui uma representação única em soma de binômios. Note que
+			                  pelo passo indutivo garantimos que \(k\), a parte de "baixo" do binômio, irá decrescer de um em um, como pede o teorema.
+		            \end{itemize}
 
+		            Essa prova indutiva garante a existência dos binômios, mas não prova que eles são únicos para cada natural \(n\).
 	      \end{itemize}
 	\item \begin{itemize}
 		      \item OK (2.8.3) Seja \(G\) um grafo com número cromático igual a \(\mathcal{X}(G)\). Sabemos que, para qualquer par de cores \(c_1, c_2\) da coloração mínima, deve existir ao menos uma aresta entre vértices \(v_1\), com cor \(c_1\), e \(v_2\), com cor \(c_2\). Caso contrário, todos os vértices com cor \(c_2\), poderiam ser coloridas com a cor \(c_1\) (sem perda de generalidade), o que seria contraditório com o fato da coloração ser mínima. Logo, para cada par de cores na coloração, deve existir ao menos uma aresta, e como cada aresta conecta exatamente dois vértices, temos que \(e(G) \ge \binom{\mathcal{X}(G)}{2}\).
