@@ -64,7 +64,10 @@
 			                  \end{figure}
 		            \end{enumerate}
 		      \item OK (1.5.6) Seja \(G\) um grafo qualquer com \(n\) vértices. Suponha, por contradição, que não existam dois vértices em \(G\) com o mesmo grau. Logo, como existem \(n\) vértices no grafo, os \(n\) possíveis graus que um vértice pode ter são \(\{0, 1, \dots, n-1\}\), logo podemos dizer que estes são os graus dos vértices de \(G\). No entanto, isso é absurdo, pois existiram um vértice de grau 0 e um vértice de grau \(n-1\) em um grafo com \(n\) vértices, o que não faz sentido. Logo, a premisa inicial estava errada, e podemos afirmar que todo grafo com \(n\) vértices, \(n \geq 2\), possui dois vértices com o mesmo grau.
-		      \item (1.5.11) indução?
+		      \item (1.5.11) Em resumo, de modo menos formal, o que a questão pede é para provar que todo número pode ser
+		            escrito como a soma de binomiais únicos. A prova pode ser feita da seguinte maneira:
+
+
 	      \end{itemize}
 	\item \begin{itemize}
 		      \item OK (2.8.3) Seja \(G\) um grafo com número cromático igual a \(\mathcal{X}(G)\). Sabemos que, para qualquer par de cores \(c_1, c_2\) da coloração mínima, deve existir ao menos uma aresta entre vértices \(v_1\), com cor \(c_1\), e \(v_2\), com cor \(c_2\). Caso contrário, todos os vértices com cor \(c_2\), poderiam ser coloridas com a cor \(c_1\) (sem perda de generalidade), o que seria contraditório com o fato da coloração ser mínima. Logo, para cada par de cores na coloração, deve existir ao menos uma aresta, e como cada aresta conecta exatamente dois vértices, temos que \(e(G) \ge \binom{\mathcal{X}(G)}{2}\).
@@ -107,13 +110,22 @@
 		            um \(K_{k + 1}\) no grafo e isso aumentaria o número de arestas dele, um absurdo pois assumimos que o número de arestas era máximo.
 
 		            Seja agora \(H = G - K_k\). Pela hipótese, \(|E(H)| \leq (1 - \frac{1}{n})\frac{n^2}{2}\).
-		            Logo temos que \(|E(G)| \leq (1 - \frac{1}{n})\frac{n^2}{2} + (n-k)(k-1) + \binom{n}{2}\),
-		            como queríamos demonstrar.
+		            Logo temos que \(|E(G)| \leq (1 - \frac{1}{k})\frac{(n-k)^2}{2} + (n-k)(k-1) + \binom{k}{2}\). Expandindo, temos:
+
+		            \begin{figure}[H]
+			            \centering
+			            \includegraphics[width=0.8\textwidth]{images/351.jpeg}
+			            \caption{Questão 3.5.1 - Limite superior}
+		            \end{figure}
+
+		            Como queríamos demonstrar.
+
+		            Para o limite inferior, podemos tomar a seguinte abordagem.
+
 
 		      \item (3.5.5)
 		            Queremos provar que, se \(e(G) > \frac{n^2}{4}\), onde \(n\) é o número de vértices em \(G\),
 		            temos que \(G\) possui ao menos \(\lfloor\frac{n}{2}\rfloor\) triângulos.
-
 
 		            A prova pode ser feita dividindo o problemas em três casos diferentes. Primeiramente, suponha
 		            que \(e(G) \geq \frac{n^2}{4} + 2\). Pelo teorma 3.3.2 do livro, temos que \(G\) possui pelo menos
@@ -131,7 +143,6 @@
 		            \[\frac{n}{6}(e(G) + 2 - \frac{n^2}{4}) = \frac{n}{6}(\frac{n^2}{4} + 1 + 2 - \frac{n^2}{4}) = \frac{3n}{6} = \frac{n}{2} \geq \lfloor\frac{n}{2}\rfloor\]
 
 		            Portanto, provamos o teorema.
-
 
 		      \item (3.5.6)
 		            Queremos provas que, se \(e(G) \geq 2 ex(n, H)\), então \(G\) contêm pelo menos \(ex(n, H)\) cópias de \(H\).
@@ -155,12 +166,21 @@
 		            é limitado superiormente por \(v(G_i)/2\). Para os casos em que \(v(G_i) < k\), o grau mínimo possui um limite superior
 		            no tamanho do grafo, trivialmente, mas não podemos inferir nada sobre o limite inferior.
 
-		            Se formos otimista e somarmos o limite superior do grau mínimo de cada um desses grafos, teremos o seguinte resultado:
+		            Se formos otimistas e somarmos o limite superior do grau mínimo de cada um desses grafos, teremos o seguinte resultado:
 
+		            \begin{figure}[H]
+			            \centering
+			            \includegraphics[width=0.8\textwidth]{images/358.jpg}
+			            \caption{Questão 3.5.8}
+		            \end{figure}
 
-		            COLOCAR SOMA NO PAPEL DESSE SOMATORIO E MOSTRAR QUER É MENOR QUE N^2/4
+		            Podemos notar que, para \(n\) suficientemente grande, essa soma não atinge o valor de \(\frac{n^2}{4}\).
+		            Note que, na equação final da soma dos graus, temos \(\frac{n^2}{4}\), mas temos logo depois um \(-\frac{n}{4}\).
+		            Conforme \(n\) cresce suficientemente, esse fator irá dominar as somas com \(k\) na equação. Portanto, para \(n\)
+		            grande, chegamos à um absurdo.
+		            Portanto, a hipótese por contradição era falsa, e provamos o que o exercício pedia.
+
 		      \item (3.5.9)
-
 		            Sabemos pelo teorema de Erdos e Stone que, se \(H\) for um grafo não vazio, então:
 
 		            \[ex(n, H) = (1 - \frac{1}{\mathcal{X}(H) - 1} + o(1))\frac{n^2}{2}\]
