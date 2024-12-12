@@ -147,7 +147,18 @@
 		            pelo menos \(k\) vértices, então \(\delta(H) \geq \frac{v(H)}{2}\).
 		            Por contradição, vamos supor que a afirmativa é falsa. Portanto, todo subgrafo \(H\)
 		            com \(k\) vértices ou mais deve ter algum vértice \(v\)com grau pequeno, isto é, \(d(v) < \frac{v(H)}{2}\).
+		            Considere o processo de gulosamente retirar vértices de \(G\), sempre retirando o vértice com o menor grau na
+		            iteração do processo guloso. Ou seja, temos a sequência de grafos \(G_1, G_2, \dots, G_n\), onde \(G_1\) é o próprio \(G\)
+		            e para todo \(i\), \(G_{i+1}\) é o grafo \(G_i\) menos o vértice de grau mínimo em \(G_i\).
 
+		            Sabemos, pelo hipótese de contradição que assumimos, que enquanto \(v(G_i) \geq k\), então o grau mínimo de \(G_i\)
+		            é limitado superiormente por \(v(G_i)/2\). Para os casos em que \(v(G_i) < k\), o grau mínimo possui um limite superior
+		            no tamanho do grafo, trivialmente, mas não podemos inferir nada sobre o limite inferior.
+
+		            Se formos otimista e somarmos o limite superior do grau mínimo de cada um desses grafos, teremos o seguinte resultado:
+
+
+		            COLOCAR SOMA NO PAPEL DESSE SOMATORIO E MOSTRAR QUER É MENOR QUE N^2/4
 		      \item (3.5.9)
 
 		            Sabemos pelo teorema de Erdos e Stone que, se \(H\) for um grafo não vazio, então:
