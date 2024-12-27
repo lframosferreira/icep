@@ -136,10 +136,26 @@
 
 		\end{itemize}
 	\item (4.5.3)
+
 	\item (4.5.4)
+
+		Queremos mostrar que \(R_r(3) \geq 5^{\frac{r}{2}}\). Sabemos pelo teorema 4.1.6 do livro que \(R_r{3} \geq 2^r\).
 	\item (4.5.5)
 			\item (4.5.6)
 			\item (4.5.7)
+
+				Inicialmente, vamos notar que existe um \(N \in \mathbb{N}\) tal que a partir desse \(N\) o teorema vale para \(r\), e esse \(N\) é chamado de número de
+				Schur. Sabemos pelo teorema de Ramsey que \(n = R_r(3)\) é um inteiro, que existe, tal que
+				toda r-coloração de \(K_n\) contêm uma cópia monocromático de \(K_3\).
+				Considere então o conjunto \(\{1, \dots, n\}\) e uma r-coloração dele.
+
+				Vamos colorir o \(K_n\) da seguinte maneira. Para cada aresta \(v_iv_j \in V(K_n)\), colorimos ela com a cor \(c\) se \(|i - j|\) foi colorido com a cor
+				\(c\) na r-coloração anterior dos inteiros de 1 até \(n\). Pelo teorema de Ramsey, sabemos que essa coloração de \(K_n\) contêm um triângulo monocromático.
+				Sejam \(v_a, v_b, v_c\), com \(a > b > c\) os vértices queformam esse triângulo, e suponha que ele foi colorido com a cor \(c\). Logo,
+				\(a - b, b - c, a - c\) são valores coloridos com a mesma cor no particionamento dos inteiros de 1 até \(n\). Note, no entanto, que 
+				\(a - b + b - c = a - c\), ou seja, se tomarmos \(x = a - b\), \(y = b - c\) e \(z = a - c\), encontramos a tripla \(\{x,y,z\}\), o que prova o 
+				teorema de Schur, como queríamos demonstrar.
+
 			\item (4.5.8) OPCIONAL
 			\item (4.5.9)
 			\item (4.5.10)
