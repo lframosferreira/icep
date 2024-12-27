@@ -93,18 +93,34 @@
 		\begin{itemize}
 			\item \(R(K_3, C_4)\)
 
-			Para provar esse resultado
+				Inicialmente, note que \(R(K_3, C_4) > 6\), uma vez que a 2-coloração do \(K_6\) abaixo não contêm \(K_3\) vermelho nem
+				\(C_4\) azul. Isso pois as arestas azuis formam um \(2 K_3\) e as arestas vermelhas foram um bipartido \(K_{3, 3}\).
+
+ 
+			                  \begin{figure}[H]
+				                  \centering
+				                  \includegraphics[width=0.5\textwidth]{images/k6.jpeg}
+								  \caption{\(K_6\) 2-colorido}
+			                  \end{figure}
+
+				Seja agora um \(K_7\) 2-colorido. Como \(R(3) = 6\), sabemos que deve existir nessa 2-coloração ou um \(K_3\) vermelho ou um azul. Se for vermlho acabamos,
+				então vamos assumir que é azul. Sejam \(W = \{w_1, w_2, w_3\}\) os vértices desse \(K_3\) azul e \( V = \{v_1, v_2, v_3, v_4\}\) os vértices que sobraram no \(K_7\). Se \(V\) formar
+				uma clique azul, temos um \(C_4\) azul e acabamos. Logo vamos assumir que existe uma arestas vermelha entre vértices de \(V\). Sem perda de generalidade, vamos assumir
+				que é entre \(v_1\) e \(v_2\). Note também que para qualquer \(v \in V\), se ele possuir duas ou mais arestas azuis indo para \(W\), teríamos um \(C_4\)
+				azul formado por \(\{v, w_1, w_2, w_3\}\), então assumimos que existe no máximo uma aresta azul dessa forma, o que implica em ao menos duas arestas vermelhas
+				dessa forma. Note, no entanto, que \(v_1\) e \(v_2\) compartilham um vizinho \(w \in W\) de tal modo que \(v_1w\) e \(v_2w\) são vermelhas,
+				pelo princípio a casa dos pombos. Como \(v_1v_2\) é vermlha, temos um \(K_3\) vermelho. Logo, \(R(K_3, C_4) = 7\), como queríamos demonstrar.
 
 			\item \(R(K_3, C_5)\)
 
 				Primeiramente, vamos mostrar que \(R(K_3, C_5) > 8\) ao mostrar uma 2-coloração de um \(K_8\) tal que não existe um
 				\(K_3\) vermelho e nem um \(C_5\) azul. Tal grafo esta na imagem abaixo. Note que as arestas azuis formam 2 \(K_4\), logo é impossível
-				ter um \(C_5\) azul. Como as arestas vermelhas formam um grafo bipartido, não há como eistir um \(K_3 = C_3\) vermelho.
+				ter um \(C_5\) azul. Como as arestas vermelhas formam um grafo bipartido, não há como existir um \(K_3 = C_3\) vermelho.
 
 			                  \begin{figure}[H]
 				                  \centering
-				                  \includegraphics[width=0.8\textwidth]{images/k8.jpeg}
-								  \caption{\(K_{17}\) arestas azuis}
+				                  \includegraphics[width=0.5\textwidth]{images/k8.jpeg}
+								  \caption{\(K_8\) 2-colorido}
 			                  \end{figure}
 
 				Seja agora um \(K_9\) com uma 2-coloração. Vamos lembrar que \(R(3, 4) = 9\), como demonstramos no exercício anterior. Logo, como se trata
