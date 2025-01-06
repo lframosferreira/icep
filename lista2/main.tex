@@ -154,7 +154,16 @@
 
 	\item (4.5.4)
 
-	      Queremos mostrar que \(R_r(3) \geq 5^{\frac{r}{2}}\). Sabemos pelo teorema 4.1.6 do livro que \(R_r{3} \geq 2^r\).
+	      Queremos mostrar que \(R_r(3) \geq 5^{\frac{r}{2}}\). Sabemos pelo teorema 4.1.6 do livro que \(R_r(3) \geq 2^r\).
+          Vamos demonstrar o teorema utilizando indução em \(r\). Para os casos base, temos:
+
+          \begin{itemize}
+              \item $r = 1$: $R_1(3) = 3 \geq 5^{\frac{1}{2}}$
+              \item $r = 2$: $R_2(3) = 6 \geq 5^{\frac{2}{2}} = 5$
+          \end{itemize}
+             
+            Para o passo indutivo, considere o seguinte. Seja \(r > 2\) e considere que \(R_{r-2}(3) \geq 5^{\frac{r-2}{2}} = 5^{\frac{r}{2}-1}\), ou seja, existe uma clique com ao menos \(5^{\frac{r-2}{2}}\) vértices tal que qualquer \((r - 2)\)-coloração dela apresenta um triângulo monocromático. Partindo dessa premissa, queremos mostrar que \(R_r(3) \geq 5^{\frac{k}{2}}\), ou seja, existe uma r-coloração da clique de \(5^{k}{2}\) vértices tal que ela não possui um triângulo monocromático. Seja então \(G = K_{5^{\frac{k}{2}}}\).
+          
 	\item (4.5.5)
 
 	      Sabemos que \(R(t)\) é o menor \(n\) tal que toda 2-coloração de \(K_n\) contêm uma cópia monocromática de \(K_t\). Logo, se pegarmos o \(K_n\) em que \(n = R(t)\), seu número de arestas é \(\binom{n}{2}\). Obviamente temos que
