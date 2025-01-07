@@ -154,19 +154,28 @@
 
 	\item (4.5.4)
 
-	      Queremos mostrar que \(R_r(3) \geq 5^{\frac{r}{2}}\). Sabemos pelo teorema 4.1.6 do livro que \(R_r(3) \geq 2^r\).
+	      Queremos mostrar que \(R_r(3) \> 5^{\frac{r}{2}}\). Sabemos pelo teorema 4.1.6 do livro que \(R_r(3) \geq 2^r\).
 	      Vamos demonstrar o teorema utilizando indução em \(r\). Para os casos base, temos:
 
 	      \begin{itemize}
-		      \item $r = 1$: $R_1(3) = 3 \geq 5^{\frac{1}{2}}$
-		      \item $r = 2$: $R_2(3) = 6 \geq 5^{\frac{2}{2}} = 5$
+		      \item $r = 1$: $R_1(3) = 3 > 5^{\frac{1}{2}}$
+		      \item $r = 2$: $R_2(3) = 6 > 5^{\frac{2}{2}} = 5$
 	      \end{itemize}
 
-	      Para o passo indutivo, considere o seguinte. Seja \(r > 2\) e considere que \(R_{r-2}(3) \geq 5^{\frac{r-2}{2}} = 5^{\frac{r}{2}-1}\), ou seja, existe uma clique com ao menos \(5^{\frac{r-2}{2}}\) vértices tal que qualquer \((r - 2)\)-coloração dela apresenta
-	      um triângulo monocromático. Partindo dessa premissa, queremos mostrar que \(R_r(3) \geq 5^{\frac{r}{2}}\), ou seja, existe uma r-coloração da clique de \(5^{r}{2}\) vértices tal que ela não possui um triângulo monocromático. Seja então \(G = K_{5^{\frac{r}{2}}}\).
-	      Vamos particionar os vértices de \(G\) em 5 conjuntos disjuntos, denotados por \(\{V_1, V_2, V_3, V_4, V_5\}\), de modo que o tamanho de cada \(V_i\) é igual, isto é, contêm \(\frac{5^{\frac{r}{2}}}{5} = 5^{\frac{r}{2} - 1} = 5^{\frac{r - 2}{2}}\) vértices. Pela hipótese
+	      Para o passo indutivo, considere o seguinte. Seja \(r > 2\) e considere que \(R_{r-2}(3) > 5^{\frac{r-2}{2}} = 5^{\frac{r}{2}-1}\), ou seja, existe uma clique com ao menos \(5^{\frac{r-2}{2}}\) vértices tal que qualquer \((r - 2)\)-coloração dela apresenta
+	      um triângulo monocromático. Partindo dessa premissa, queremos mostrar que \(R_r(3) > 5^{\frac{r}{2}}\), ou seja, existe uma r-coloração da clique de \(5^{r}{2}\) vértices tal que ela não possui um triângulo monocromático. Seja então \(G = K_{5^{\frac{r}{2}}}\).
+	      Vamos particionar os vértices de \(G\) em 5 conjuntos disjuntos, denotados por \(\{V_0, V_1, V_2, V_3, V_4\}\), de modo que o tamanho de cada \(V_i\) é igual, isto é, contêm \(\frac{5^{\frac{r}{2}}}{5} = 5^{\frac{r}{2} - 1} = 5^{\frac{r - 2}{2}}\) vértices. Pela hipótese
 	      de indução, sabemos que cada \(V_i\) pode ser colorido com \(r-2\) cores de modo que não seja criado um triângulo monocromático. Vamos colorir as arestas das partições com essas \(r-2\) cores, sem criar um triângulo monocromático. Agora, sejam duas cores novas ainda não utilizadas,
-	      denotadas \(c_1\) e \(c_2\). Vamos colorir as arestas faltantes (as arestas entre vértices de diferentes partições) da seguinte maneira.
+	      denotadas \(c_1\) e \(c_2\). Vamos colorir as arestas faltantes (as arestas entre vértices de diferentes partições) da seguinte maneira. Para todo \(i \in \{0, 1, 2, 3, 4\}\), iremos colocrir as arestas entre os vértices de \(V_i\) e \(V_{(i+1) \% 5}\) com a cor \(c_1\). O restante das arestas serão coloridas
+	      com a cor \(c_2\). Note que nenhum triângulo monocromático é criado com as cores \(c_1\) e \(c_2\) com essa coloração. Como não havia triângulo monocromático com as outras cores, não há nenhum triângulo monocromático no grafo. Logo, provamos que \(R_r(3) > 5^{\frac{r}{2}}\), como queríamos demonstrar.
+
+	      A imagem abaixo ilustra a coloração citada, onde \(c_1\) é vermelho e \(c_2\) é azul.
+
+	      \begin{figure}[H]
+		      \centering
+		      \includegraphics[width=0.5\textwidth]{images/k5coloring.jpeg}
+		      \caption{\(R_r(3) > 5^{\frac{r}{2}}\)}
+	      \end{figure}
 
 	\item (4.5.5)
 
