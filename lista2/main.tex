@@ -183,6 +183,25 @@
 	      \(\hat{r} \leq \binom{n}{2}\), pois \(K_n\) é um grafo tal que \(K_n \rightarrow K_t\). CONTINUAR
 
 	\item (4.5.6)
+
+	      Seja \(G\) um grafo tal que \(|V(G)| = n\). Vamos supor que exista em \(G\) um vértice \(v\) de modo que o grau de \(v\) em \(G\) é maior ou igual a \(R(s)\).
+	      Nesse caso, os vizinhos de \(v\) teriam como subgrafo induzido ou uma clique de tamanho \(s\) ou um independente de tamanho \(s\), que implicaria na existência de um \(K_{1, s}\) com centro em \(v\),
+	      o que é exatamente o estamos procurando. Vamos supor, portanto, que o grau de qualquer vértice \(v\) de \(G\) não excede \(R(s)\).
+
+	      A ideia agora é particionar o grafo em \(k\) conjuntos de vértices \(\{V_o, \dots, V_k\}\), de modo que os conjuntos são construídos indutivamente da seguinte maneira:
+
+	      \begin{itemize}
+		      \item \(V_0\) contêm apenas um vértice \(v\)
+		      \item \(V_i\) contêm os vértices a distância \(i\) de \(v\), formalmente denotado por \(\mathcal{N}^i(v)\)
+	      \end{itemize}
+
+	      Se \(k \geq s\) haveria um caminho de tamanho \(s\) no grafo, portanto podemos assumir que \(k < s\) para todo \(v\).
+	      Nesse ponto, é importante lembrar que o grau do grafo \(G\) é limitado para todo vértice, o que implica no fato de que o tamanho de cada \(V_i\)
+	      ser menor ou igual a \(R(s)^i\). A partir disso, temos que \(|V(G)| = \sum_{i=0}^k |V_i| \leq R(s)^s\), que é o valor que queríamos.
+
+	      Isso implica no fato de que se um grafo tiver mais do que \(R(s)^s\) vértices, ele com certeza terá um caminho de \(s\) vértices induzido, uma clique de tamanho \(s\) induzida
+	      ou uma estrela \(K_{1, s}\) induzida, o que quer dizer que \(C(s) \leq R(s)^s\), como queríamos demonstrar.
+
 	\item (4.5.7)
 
 	      Inicialmente, vamos notar que existe um \(N \in \mathbb{N}\) tal que a partir desse \(N\) o teorema vale para \(r\), e esse \(N\) é chamado de número de
