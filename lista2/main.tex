@@ -218,19 +218,31 @@
 
 	\item (4.5.8) OPCIONAL
 	\item (4.5.9)
-        
-            Seja $\mathcal{X}$ uma 2-coloração arbitrária das arestas do \(K_n\). Para cada triângulo no \(K_n\) (sabemos que existem \(\binom{n}{3}\) no total), vamos colocá-los em três 
-            conjuntos diferentes \(A, V, C\), sendo eles:
 
-            \begin{itemize}
-                \item \(A:\) triângulos em que todas as arestas são azuis
-                \item \(V:\) triângulos em que todas as arestas são vermelhas 
-                \item \(C:\) triângulos que contêm arestas com ambas as cores
-            \end{itemize}
+	      Seja $\mathcal{X}$ uma 2-coloração arbitrária das arestas do \(K_n\). Para cada triângulo no \(K_n\) (sabemos que existem \(\binom{n}{3}\) no total), vamos colocá-los em três
+	      conjuntos diferentes \(A, V, C\), sendo eles:
 
-	\item (4.5.10)
+	      \begin{itemize}
+		      \item \(A:\) triângulos em que todas as arestas são azuis
+		      \item \(V:\) triângulos em que todas as arestas são vermelhas
+		      \item \(C:\) triângulos que contêm arestas com ambas as cores
+	      \end{itemize}
 
-	      Não, essa afirmativa é falsa.
+	      Vamos chamar um triângulo não monocromático de triângulo bicromático (estamos considerando uma 2-coloração). Vamos definir como ângulo bicromático
+	      um par de arestas cok cores distintas que compartilham um vértice, chamado de vértice de suporte. Trivialmente, todo triângulo bicromático contêm exatamente dois ângulos bicromáticos. Ao mesmo tempo,
+	      notemos que todo ângulo bicromático faz parte unicamente de um triângulo bicromático. Com isso, podemos inferir que o número de triângulos bicromáticos
+	      é exatamente metade do número de ângulos bicromáticos.
+
+	      Seja \(v_i \in V(K_n)\) e sejam \(r_i\) e \(b_i\) o número de arestas vermelhas e azuis incidentes a \(v_i\), respectivamente. Sabemos que
+	      \(b_i + r_i = n - 1\). Desse modo, o número de ângulo bicromáticos em que o vértice de suporte é \(v_i\) é igual a \(b_i r_i \leq \frac{n^2}{4}\). Desse modo,
+	      o número total de ângulos bicromáticos é \(\sum_{v_i \in V(K_n)} r_i b_i \leq \frac{n^3}{4}\). O número de triângulos bicromáticos é metade desse valor, logo é menor ou igual a \(\frac{n^3}{8}\).
+	      Isso implica que o número de triângulo monocromáticos é maior ou igual a \(\binom{n}{3} - \frac{n^3}{8}\).
+
+	      Como \(\binom{n}{3} - \frac{n^3}{8}\) é maior que \(\frac{1}{4} \binom{n}{3} - n^2\) para todo \(n\), provamos que toda 2-coloração de \(E(K_n)\) contém pelo menos
+	      \(\frac{1}{4} \binom{n}{3} - n^2\) triângulos monocromáticos, como pedido pelo enunciado.
+
+	\item (4.5.10) OPCIONAL
+
 \end{itemize}
 
 \end{document}
