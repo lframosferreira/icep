@@ -20,8 +20,82 @@
 
 \begin{itemize}
 	\item (5.8.1)
+
+	      Vamos escolher os valores de \(a_i\) da seguinte maneira:
+	      \begin{itemize}
+		      \item \(a_i = -1\) com probabilidade \(\frac{1}{2}\)
+		      \item \(a_i = 1\) com probabilidade \(\frac{1}{2}\)
+	      \end{itemize}
+
+	      Isso claramente implica que, para todo \(i, j\), o produto \(a_i a_j\) segue a seguinte distribuição:
+
+	      \begin{itemize}
+		      \item \(a_i a_j = -1\), com probabilidade \(\frac{1}{2}\)
+		      \item \(a_i a_j = 1\), com probabilidade \(\frac{1}{2}\)
+	      \end{itemize}
+
+	      A esperança de \(a_i a_j\), denotada por \(\mathbb{E}[a_i a_j]\), é igual à \(-1 * \frac{1}{2} + 1 * \frac{1}{2} = 0\). Usando a linearidade
+	      da esperança, temos que:
+
+	      \[\mathbb{E}[a_i a_j] = \]
+
 	\item (5.8.2)
+
+	      Queremos provar o teorema de Turán, que diz que se um grafo \(G\) com \(n\) vértices é livre de \(K_r\), então:
+
+	      \[|E(G)| \leq (1 - \frac{1}{r-1})\frac{r^2}{2}\]
+
+	      Sabemos, a partir do teorema 5.3.11 do livro (que devemos usar na prova), que todo grafo \(G\) possui em sua estrutura uma clique de tamanho \(\sum_{v \in V(G)} \frac{1}{n - d(v)}\),
+	      onde \(d(v)\) é o grau de \(v\) em \(G\). Isso pois todo conjunto independente em \(G\) é uma clique em \(\overline{G}\).
+
+	      Vamos inicialmente então assumir que o grafo \(G\) é livre de \(K_r\), a clique com \(r\) vértices. Disso podemos assumir que:
+
+	      \[\sum_{v \in V(G)} \frac{1}{n - d(v)} \leq r -1\]
+
+	      Como \(\frac{1}{n - d(v)}\) é uma função convexa em relação a \(d(v)\), podemos aplicar a transformação:
+
+	      \[\frac{n}{n - \sum_{v \in V(G)} \frac{d(v)}{n}} \leq r - 1\]
+	      \[\frac{n}{n - \frac{2 |E(G)|}{n}} \leq r - 1\]
+	      \[\frac{n}{r - 1} \leq n - \frac{2 |E(G)|}{n}\]
+	      \[\frac{2 |E(G)|}{n} \leq n - \frac{n}{r - 1}\]
+	      \[\frac{2 |E(G)|}{n} \leq n (1 - \frac{1}{r - 1})\]
+	      \[|E(G)| \leq \frac{n^2}{2} (1 - \frac{1}{r - 1})\]
+
+	      Como queríamos demonstrar.
+
 	\item (5.8.3)
+
+	      Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
+	      aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\). Vamos construir um conjunto \(S\) da seguinte maneira:
+
+	      \begin{itemize}
+		      \item \(S \gets \emptyset\)
+		      \item \(\forall v \in \pi\)
+		            \begin{itemize}
+			            \item se \(\mathcal{N}(v) \subsetneq S\):
+			                  \begin{itemize}
+				                  \item \(S \gets S \cup \mathcal{N}(v)\)
+			                  \end{itemize}
+		            \end{itemize}
+	      \end{itemize}
+
+	      Como \(G\) é um grafo livre de triângulo, como diz o enunciado, podemos afirmar que o conjunto \(S\) é independente. Isso porque
+
+	      Seja agora \(X\) a variavel aleatória que segue a seguinte regra:
+
+	      \begin{itemize}
+		      \item \(X(v) = 1\) se \(v \in S\)
+		      \item \(X(v) = 0\) c.c.
+	      \end{itemize}
+
+	      Temos que o tamanho do conjunto \(S\) é tal que \(|S| = \sum_{v \in V(G)} X_v\). O valor esperado do tamanho desse conjunto é portanto:
+
+	      \[\mathbb{E}[|S|] = \mathbb{E}[\sum_{v \in V(G)} X_v]\]
+
+	      Pela linearidade da esperança, temos que:
+
+	      \[\mathbb{E}[\sum_{v \in V(G)} X_v] = \sum_{v \in V(G)} \mathbb{E}[X_v] = \sum_{v \in V(G)} \mathbb{P}(v \in S)\]
+
 	\item (5.8.4)
 	\item (5.8.5)
 	\item (5.8.6)
