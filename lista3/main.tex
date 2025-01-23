@@ -63,38 +63,54 @@
 
 	      Como queríamos demonstrar.
 
+	      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+	      Queremos provar o teorema de Turán, que diz que se um grafo \(G\) com \(n\) vértices é livre de \(K_r\), então:
+
+	      \[|E(G)| \leq (1 - \frac{1}{r-1})\frac{r^2}{2}\]
+
+	      Pelo teorema 5.3.11, temos que o tamanho de um conjunto independente \(\alpha(G) \geq \sum_{v \\in V(G)}\frac{1}{d(v)+1}\), onde \(d(v)\) é o grau do vértice \(v\) em \(G\). Em particular,
+	      temos que \(\alpha(G) \geq \frac{n}{\Delta + 1}\), onde \(\Delta\) é o grau máximo de um vértice em \(G\).
+
+	      Seja \(X \geq 0\) uma variável aleatória e seja a esperança de \(X\) definida como \(\mathbb{E}[X] > 0\). Então sabemos que \(\mathbb{P}(X \geq \mathbb{E}[X]) > 0\).
+
+
+
 	\item (5.8.3)
+	      %
+	      % Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
+	      % aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\). Vamos construir um conjunto \(S\) da seguinte maneira:
+	      %
+	      % \begin{itemize}
+	      %  \item \(S \gets \emptyset\)
+	      %  \item \(\forall v \in \pi\)
+	      %        \begin{itemize}
+	      %         \item se \(\mathcal{N}(v) \subsetneq S\):
+	      %               \begin{itemize}
+	      %                \item \(S \gets S \cup \mathcal{N}(v)\)
+	      %               \end{itemize}
+	      %        \end{itemize}
+	      % \end{itemize}
+	      %
+	      % Como \(G\) é um grafo livre de triângulo, como diz o enunciado, podemos afirmar que o conjunto \(S\) é independente. Isso porque
+	      %
+	      % Seja agora \(X\) a variavel aleatória que segue a seguinte regra:
+	      %
+	      % \begin{itemize}
+	      %  \item \(X(v) = 1\) se \(v \in S\)
+	      %  \item \(X(v) = 0\) c.c.
+	      % \end{itemize}
+	      %
+	      % Temos que o tamanho do conjunto \(S\) é tal que \(|S| = \sum_{v \in V(G)} X_v\). O valor esperado do tamanho desse conjunto é portanto:
+	      %
+	      % \[\mathbb{E}[|S|] = \mathbb{E}[\sum_{v \in V(G)} X_v]\]
+	      %
+	      % Pela linearidade da esperança, temos que:
+	      %
+	      % \[\mathbb{E}[\sum_{v \in V(G)} X_v] = \sum_{v \in V(G)} \mathbb{E}[X_v] = \sum_{v \in V(G)} \mathbb{P}(v \in S)\]
 
-	      Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
-	      aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\). Vamos construir um conjunto \(S\) da seguinte maneira:
 
-	      \begin{itemize}
-		      \item \(S \gets \emptyset\)
-		      \item \(\forall v \in \pi\)
-		            \begin{itemize}
-			            \item se \(\mathcal{N}(v) \subsetneq S\):
-			                  \begin{itemize}
-				                  \item \(S \gets S \cup \mathcal{N}(v)\)
-			                  \end{itemize}
-		            \end{itemize}
-	      \end{itemize}
-
-	      Como \(G\) é um grafo livre de triângulo, como diz o enunciado, podemos afirmar que o conjunto \(S\) é independente. Isso porque
-
-	      Seja agora \(X\) a variavel aleatória que segue a seguinte regra:
-
-	      \begin{itemize}
-		      \item \(X(v) = 1\) se \(v \in S\)
-		      \item \(X(v) = 0\) c.c.
-	      \end{itemize}
-
-	      Temos que o tamanho do conjunto \(S\) é tal que \(|S| = \sum_{v \in V(G)} X_v\). O valor esperado do tamanho desse conjunto é portanto:
-
-	      \[\mathbb{E}[|S|] = \mathbb{E}[\sum_{v \in V(G)} X_v]\]
-
-	      Pela linearidade da esperança, temos que:
-
-	      \[\mathbb{E}[\sum_{v \in V(G)} X_v] = \sum_{v \in V(G)} \mathbb{E}[X_v] = \sum_{v \in V(G)} \mathbb{P}(v \in S)\]
 
 	\item (5.8.4)
 
@@ -126,20 +142,24 @@
 
 	      Queremos mostrar que \(R(4, k) \geq (\frac{ck}{log k})^2\) para \(k\) suficientemente grande.
 
-	      Seja \(n = (\frac{k}{4 log k})^2\). Mostraremos que existe um grafo \(G\) com \(frac{n}{2}\) vértices que é livre de \(K_4\) e satisfaz \(\alpha(G) < k\).
-	      Consideremos o grafo \(G(n,p)\) com \(p = n^{-\frac{1}{2}}\). Note que \(pk = n^{-\frac{1}{2}}k = 4 log k\). Pelo teorema 5.4.2, temos com alta probabilidade:
+	      Seja \(n = (\frac{k}{4 log k})^2\). Mostraremos que existe um grafo \(G\) com \(\frac{n}{2}\) vértices que é livre de \(K_4\) e satisfaz \(\alpha(G) < k\).
+	      Consideremos o grafo \(G(n,p)\) com \(p = n^{-\frac{3}{4}}\). Pelo teorema 5.4.2, temos com alta probabilidade:
 
 	      \[\alpha(G) \leq \frac{2 log n}{p} < k\]
 
-	      Uma vez que \(n \ k^2\) e, portanto, \(log n < 2 log k\).
+	      Uma vez que \(n < k^2\) e, portanto, \(log n < 2 log k\).
 
 	      Seja \(X\) a variável aleatória que representa o número de \(K_4\) em \(G(n, p)\). Temos que:
 
-	      \[\mathbb{E}[X] = p^4 \binom{n}{4} \leq \frac{p^4 n^4}{24} = \frac{n^2}{24}\]
+	      \[\mathbb{E}[X] = p^4 \binom{n}{4} \leq \frac{p^4 n^4}{24} = \frac{n^{-\frac{-3}{4} 4} n ^ 4}{24} = \frac{n}{24}\]
 
 	      Pela desigualdade de markov, temos:
 
-	      \[\mathbb{P}(X \geq \frac{n}{2}) \leq \frac{2}{n}\mathbb{E}[X] \leq \]
+	      \[\mathbb{P}(X \geq \frac{n}{2}) \leq \frac{2}{n}\mathbb{E}[X] \leq \frac{1}{12}\]
+
+	      Segue que existe um grafo \(H\) com \(n\) vértices, \(\alpha(H) < k\), que contém no
+	      máximo \(n/2\) triângulos. Removendo no máximo \(n/2\) vértices de \(H\) (um para
+	      cada triângulo), obtemos um grafo \(G\) como desejado inicialmente.
 
 
 	\item (5.8.7)
