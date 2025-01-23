@@ -97,6 +97,30 @@
 	      \[\mathbb{E}[\sum_{v \in V(G)} X_v] = \sum_{v \in V(G)} \mathbb{E}[X_v] = \sum_{v \in V(G)} \mathbb{P}(v \in S)\]
 
 	\item (5.8.4)
+
+	      Vamos utilizar \(\mu = \mathbb{E}[X]\) pois a notação é melhor. Queremos provar então que:
+
+	      \[\mathbb{P}(X \geq \mathbb{E}[X] + t \sigma) \leq \frac{1}{1 + t^2}\]
+
+	      Seja \(Z = X - \mathbb{E}[X]\). Sabemos que \(\mathbb{E}[Z] = 0\) e \(Var[Z] = \mathbb{E}[Z^2] = \sigma^2\)
+	      e seja \(u = \frac{\sigma}{t}\). Então:
+
+	      \(\mathbb{P}(X \geq \mathbb{E}[X] + t \sigma) = \mathbb{P}(Z \geq t \sigma) \leq \mathbb{P}((Z + u)^2 \geq (t \sigma + u)^2)\)
+
+	      Pela Desigualdade de Markov, sabemos que:
+
+	      \[\mathbb{P}((Z + u)^2 \geq (t \sigma + u)^2) \leq \frac{\mathbb{E}[(Z + u)^2]}{(t \sigma+ u)^2} = \frac{\mathbb{E}(Z^2) + 2u\mathbb{E}[Z] + u^2}{(t\sigma + u)^2} = \frac{\sigma^2 + u^2}{(t \sigma + u)^2}\]
+
+	      O resto das contas foi feito a mão:
+
+	      \begin{figure}[H]
+		      \centering
+		      \includegraphics[angle=90,origin=c,width=0.8\textwidth]{images/584.jpeg}
+	      \end{figure}
+
+	      Portanto, provamos a desigualdade de Chantelli.
+
+
 	\item (5.8.5)
 	\item (5.8.6)
 
