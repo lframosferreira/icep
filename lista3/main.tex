@@ -27,9 +27,9 @@
 
 	      Queremos provar o teorema de Turán, que diz que se um grafo \(G\) com \(n\) vértices é livre de \(K_r\), então:
 
-	      \[|E(G)| \leq (1 - \frac{1}{r-1})\frac{r^2}{2}\]
+	      \[|E(G)| \leq (1 - \frac{1}{r-1})\frac{n^2}{2}\]
 
-	      Sabemos, a partir do teorema 5.3.11 do livro (que devemos usar na prova), que todo grafo \(G\) possui em sua estrutura uma clique de tamanho \(\sum_{v \in V(G)} \frac{1}{n - d(v)}\),
+	      Sabemos, a partir do teorema 5.3.11 do livro (que devemos usar na prova), que todo grafo \(G\) possui em sua estrutura uma clique de tamanho pelo menos \(\sum_{v \in V(G)} \frac{1}{n - d(v)}\),
 	      onde \(d(v)\) é o grau de \(v\) em \(G\). Isso pois todo conjunto independente em \(G\) é uma clique em \(\overline{G}\).
 
 	      Vamos inicialmente então assumir que o grafo \(G\) é livre de \(K_r\), a clique com \(r\) vértices. Disso podemos assumir que:
@@ -46,19 +46,6 @@
 	      \[|E(G)| \leq \frac{n^2}{2} (1 - \frac{1}{r - 1})\]
 
 	      Como queríamos demonstrar.
-
-	      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
-
-	      Queremos provar o teorema de Turán, que diz que se um grafo \(G\) com \(n\) vértices é livre de \(K_r\), então:
-
-	      \[|E(G)| \leq (1 - \frac{1}{r-1})\frac{r^2}{2}\]
-
-	      Pelo teorema 5.3.11, temos que o tamanho de um conjunto independente \(\alpha(G) \geq \sum_{v \\in V(G)}\frac{1}{d(v)+1}\), onde \(d(v)\) é o grau do vértice \(v\) em \(G\). Em particular,
-	      temos que \(\alpha(G) \geq \frac{n}{\Delta + 1}\), onde \(\Delta\) é o grau máximo de um vértice em \(G\).
-
-	      Seja \(X \geq 0\) uma variável aleatória e seja a esperança de \(X\) definida como \(\mathbb{E}[X] > 0\). Então sabemos que \(\mathbb{P}(X \geq \mathbb{E}[X]) > 0\).
-
 
 
 	\item (5.8.3)
@@ -139,7 +126,7 @@
 
 	      Pela desigualdade de markov, temos:
 
-	      \[\mathbb{P}(X \geq \frac{n}{2}) \leq \frac{2}{n}\mathbb{E}[X] \leq \frac{1}{12}\]
+	      \[\mathbb{P}(X \geq \frac{n}{2}) \leq \frac{2}{n}\mathbb{E}[X]  = \frac{2}{n} \frac{n}{24} \leq \frac{1}{12}\]
 
 	      Segue que existe um grafo \(H\) com \(n\) vértices, \(\alpha(H) < k\), que contém no
 	      máximo \(n/2\) triângulos. Removendo no máximo \(n/2\) vértices de \(H\) (um para
