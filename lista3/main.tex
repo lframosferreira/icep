@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{textpos}
+\usepackage{minitoc} %% Required
+\usepackage{pdfpages}
 
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
@@ -19,25 +21,7 @@
 \maketitle
 
 \begin{itemize}
-	\item (5.8.1)
-
-	      Vamos escolher os valores de \(a_i\) da seguinte maneira:
-	      \begin{itemize}
-		      \item \(a_i = -1\) com probabilidade \(\frac{1}{2}\)
-		      \item \(a_i = 1\) com probabilidade \(\frac{1}{2}\)
-	      \end{itemize}
-
-	      Isso claramente implica que, para todo \(i, j\), o produto \(a_i a_j\) segue a seguinte distribuição:
-
-	      \begin{itemize}
-		      \item \(a_i a_j = -1\), com probabilidade \(\frac{1}{2}\)
-		      \item \(a_i a_j = 1\), com probabilidade \(\frac{1}{2}\)
-	      \end{itemize}
-
-	      A esperança de \(a_i a_j\), denotada por \(\mathbb{E}[a_i a_j]\), é igual à \(-1 * \frac{1}{2} + 1 * \frac{1}{2} = 0\). Usando a linearidade
-	      da esperança, temos que:
-
-	      \[\mathbb{E}[a_i a_j] = \]
+	\item (5.8.1) Exercício feito à mão e página com ele está anexado ao fim do pdf.
 
 	\item (5.8.2)
 
@@ -161,8 +145,7 @@
 	      máximo \(n/2\) triângulos. Removendo no máximo \(n/2\) vértices de \(H\) (um para
 	      cada triângulo), obtemos um grafo \(G\) como desejado inicialmente.
 
-
 	\item (5.8.7)
 \end{itemize}
-
+\includepdf[pages=-]{ex01.pdf}
 \end{document}
