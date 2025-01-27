@@ -19,7 +19,30 @@
 \maketitle
 
 \begin{itemize}
-	\item socorro
+	\item (6.7.1)
+	\item (6.7.2)
+
+	      Vamos primeiramente relembrar o que é uma família crescente \(\mathcal{A}\) de grafos. Uma família de grafos é crescente se para
+	      todo \(G \in \mathcal{A}\), se \(G \subseteq G'\), então \(G' \in \mathcal{A}\).
+
+	      Vamos construir dois modelos \(G(n, p)\), um com probabilidade \(p_1\) e outro com probabilidade \(p_2\), de modo que \(0 \leq p_1 < p_2 \leq 1\).
+	      Vamos construir os grafos de maneira natural: escolhemos de maneira uniforme um número real \(r\) aleatório no intervalo \([0, 1]\), para cada par de vértices
+	      em um grafo com \(n\) vértices. Se \(r \leq p_1\),  adicionamos à aresta referente ao par de vértices em \(G(n,p_1)\). Se \(r \leq p_2\), adicionamos a aresta
+	      em \(G(n, p_2)\).
+
+	      Pela maneira como o grafo foi construído, note que se uma aresta existe em \(G(n, p_1)\), ela também existe em \(G(n, p_2)\), uma vez que \(p_1 < p_2\). Logo, temos certeza
+	      que \(G(n, p_1) \subseteq G(n, p_2)\). Pela hipótese inicial, sabemos que \(\mathcal{A}\) é uma família crescente em grafos. Se \(G(n, p_1)\) pertence a \(\mathcal{A}\),
+	      então com certeza \(G(n, p_2) \in \mathcal{A}\). Isso nos mostra que \(\mathbb{P}(G(n, p) \in \mathcal{A})\) é uma função que cresce com \(p\), isto é:
+
+	      \[\mathbb{P}(G(n, p_1) \in \mathcal{A}) \leq \mathbb{P}(G(n, p_2) \in \mathcal{A})\]
+
+	      para todo \(p_1 \leq p_2\).
+
+	\item (6.7.5)
+
+
+
+
 \end{itemize}
 
 \end{document}
