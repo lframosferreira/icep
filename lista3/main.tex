@@ -49,37 +49,17 @@
 
 
 	\item (5.8.3)
-	      %
-	      % Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
-	      % aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\). Vamos construir um conjunto \(S\) da seguinte maneira:
-	      %
-	      % \begin{itemize}
-	      %  \item \(S \gets \emptyset\)
-	      %  \item \(\forall v \in \pi\)
-	      %        \begin{itemize}
-	      %         \item se \(\mathcal{N}(v) \subsetneq S\):
-	      %               \begin{itemize}
-	      %                \item \(S \gets S \cup \mathcal{N}(v)\)
-	      %               \end{itemize}
-	      %        \end{itemize}
-	      % \end{itemize}
-	      %
-	      % Como \(G\) é um grafo livre de triângulo, como diz o enunciado, podemos afirmar que o conjunto \(S\) é independente. Isso porque
-	      %
-	      % Seja agora \(X\) a variavel aleatória que segue a seguinte regra:
-	      %
-	      % \begin{itemize}
-	      %  \item \(X(v) = 1\) se \(v \in S\)
-	      %  \item \(X(v) = 0\) c.c.
-	      % \end{itemize}
-	      %
-	      % Temos que o tamanho do conjunto \(S\) é tal que \(|S| = \sum_{v \in V(G)} X_v\). O valor esperado do tamanho desse conjunto é portanto:
-	      %
-	      % \[\mathbb{E}[|S|] = \mathbb{E}[\sum_{v \in V(G)} X_v]\]
-	      %
-	      % Pela linearidade da esperança, temos que:
-	      %
-	      % \[\mathbb{E}[\sum_{v \in V(G)} X_v] = \sum_{v \in V(G)} \mathbb{E}[X_v] = \sum_{v \in V(G)} \mathbb{P}(v \in S)\]
+
+	      Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
+	      aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\).
+
+	      Vamos construir um conjunto \(S\) da seguinte maneira gulosa. Primeiro, escolha o vértice \(v\) de menor grau em \(G\) e adicione ele em \(S\).
+	      Depois, remova de \(G\) tanto o próprio \(v\) como também a vizinhança de \(v\), \(\mathcal{N}(v)\). Continuamos o processo até \(V(G) = \emptyset\).
+
+	      Trivialmente, \(S\) é um conjunto independente.
+
+
+
 
 
 
