@@ -51,22 +51,23 @@
 	\item (5.8.3)
 
 	      Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
-	      aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\).
+	      aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\) e por \(\mathcal{N}_2(v)\) os vértices a distância 2 de \(v\).
 
 	      Vamos construir um conjunto \(S\) da seguinte maneira gulosa. Para cada \(v\) em \(\pi\), vamos adicionar \(\mathcal{N}(v)\) em \(S\) e remover
-	      de \(\pi\) os vértices de \(\mathcal{N}{\mathcal{N}(v)}\), que pode ser descrito como \(v \cup \mathcal{N}_2(v)\). O processo persiste até \(\pi = \emptyset\).
+	      de \(\pi\) os vértices de \(\mathcal{N}(\mathcal{N}(v)\)), que pode ser descrito como \(v \cup \mathcal{N}_2(v)\). O processo persiste até \(\pi = \emptyset\).
 
 
-	      Trivialmente, \(S\) é um conjunto independente, uma vez que \(G\) é livre de triângulos. Quando adicionamos \(\mathcal{N}\) à \(S\), sabemos que nenhum desses vértices são vizinhos
-	      pois se não existiria um triângulo em \(G\). Seja \(t = |S|\) o tamanho de \(S\), Denotamos por \(\mathbb{E}[t]\) a esperança de \(t\).
-
-	      Sabemos que \(\mathbb{E}[t] = \sum_{v \in V(G)} \mathbb{P}[v \in S]\). Para um \(v\) pertencer a \(S\), nenhum de seus vizinhos pode pertencer, e \(v\) possui \(d(v)\) vizinhos.
-	      Para cada vértice \(v\), de acordo com a construção do conjunto \(S\), adicionamos \(d(v)\) a \(S\) e removemos \(v\) e \(d_2(v)\) das possibilidades de escolha.
-	      Logo, para cada \(v\), a quantidade esperada de vértices adicionados por ele a \(S\) é de \(\frac{d(v)}{1 + d(v) + d_2(v)}\).
+	      Trivialmente, \(S\) é um conjunto independente, uma vez que \(G\) é livre de triângulos. Quando adicionamos \(\mathcal{N}(v)\) à \(S\), sabemos que nenhum desses vértices são vizinhos
+	      pois se não existiria um triângulo em \(G\), formado por dois desse vértices junto com o próprio \(v\). Seja \(t = |S|\) o tamanho de \(S\), Denotamos por \(\mathbb{E}[t]\) a esperança de \(t\).
 
 
+	      Entendemos que \(v\) contribuir com \(S\) significa que \(v\) "adicionou" seus vizinhs em \(S\). Sabemos que \(\mathbb{E}[t] = \sum_{v \in V(G)} \mathbb{P}[v \text{ contribuir com } S]\). Para um \(v\) contribuir com \(S\), temos que calcular a probabilidade dele estar na ordem de \(\pi\) antes
+	      de \(\mathcal{N}(v)\) e de \(\mathcal{N}_2(v)\). Isso pois se algum dos vértices nesses conjuntos estiver antes de \(v\) em \(\pi\), \(v\) não será escolhido para contribuir com \(S\). Para cada \(v\), sua contribuição
+	      para \(S\) é de \(d(v)\), pois seus vizinhos são adicionados em \(S\). Pela linearidade da esperança, podemos calcular a esperança de \(t\) sendo maior ou igual a:
 
+	      \[\sum_{v \in V(G)} \frac{1}{1 + d(v) + d_2(v)} d(v) = \sum_{v \in V(G)} \frac{d(v)}{1 + d(v) + d_2(v)}\]
 
+	      Logo, provamos a desigualdade do enunciado.
 
 
 	\item (5.8.4)
