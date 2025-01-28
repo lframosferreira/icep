@@ -53,10 +53,16 @@
 	      Para resolver essa questão também usaremos o teorema 5.3.11 do livro. Seja \(G\) um grafo com \(n\) vértices e \(\pi = [v_1, \dots, v_{n}]\) uma permutação
 	      aleatória e uniforme dos vértices de \(G\). Denotamos por \(\mathcal{N}(v)\) a vizinhança aberta de \(v\) em \(G\).
 
-	      Vamos construir um conjunto \(S\) da seguinte maneira gulosa. Primeiro, escolha o vértice \(v\) de menor grau em \(G\) e adicione ele em \(S\).
-	      Depois, remova de \(G\) tanto o próprio \(v\) como também a vizinhança de \(v\), \(\mathcal{N}(v)\). Continuamos o processo até \(V(G) = \emptyset\).
+	      Vamos construir um conjunto \(S\) da seguinte maneira gulosa. Para cada \(v\) em \(\pi\), vamos adicionar \(\mathcal{N}(v)\) em \(S\) e remover
+	      de \(\pi\) os vértices de \(\mathcal{N}{\mathcal{N}(v)}\), que pode ser descrito como \(v \cup \mathcal{N}_2(v)\). O processo persiste até \(\pi = \emptyset\).
 
-	      Trivialmente, \(S\) é um conjunto independente.
+
+	      Trivialmente, \(S\) é um conjunto independente, uma vez que \(G\) é livre de triângulos. Quando adicionamos \(\mathcal{N}\) à \(S\), sabemos que nenhum desses vértices são vizinhos
+	      pois se não existiria um triângulo em \(G\). Seja \(t = |S|\) o tamanho de \(S\), Denotamos por \(\mathbb{E}[t]\) a esperança de \(t\).
+
+	      Sabemos que \(\mathbb{E}[t] = \sum_{v \in V(G)} \mathbb{P}[v \in S]\). Para um \(v\) pertencer a \(S\), nenhum de seus vizinhos pode pertencer, e \(v\) possui \(d(v)\) vizinhos.
+	      Para cada vértice \(v\), de acordo com a construção do conjunto \(S\), adicionamos \(d(v)\) a \(S\) e removemos \(v\) e \(d_2(v)\) das possibilidades de escolha.
+	      Logo, para cada \(v\), a quantidade esperada de vértices adicionados por ele a \(S\) é de \(\frac{d(v)}{1 + d(v) + d_2(v)}\).
 
 
 
