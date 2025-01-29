@@ -47,11 +47,13 @@
 	      Para calcular \(\mathbb{E}[X_k]\), vamos imaginar o seguinte. Dos \(n\) vértices do grafo, temos que escolher \(k\) para formar o ciclo. Portanto, teremos um fator
 	      da forma \(\binom{n}{k}\). Para cada uma das arestas desse ciclo existir, precisaremos da probabilidade \(p^k\), pois a existência de cada aresta depende de \(p\).
 	      Temos que levar em consideração também as permutações desse vértices, por isso mais um fator de \((k-1)!\) deve ser adicionado (são todas as permutações de 1 até \(n\), mas o primeiro vértice não importa pois um ciclo não
-	      tem um "primeiro vértice" como em um caminho, por exemplo, portanto usamos \(k-1\) e não \(k\)). Portanto, \(\mathbb{E}[X_k] = \binom{x}{k}(k-1)!p^k\).
+	      tem um "primeiro vértice" como em um caminho, por exemplo, portanto usamos \(k-1\) e não \(k\)). Temos também que dividir por 2 uma vez que a orientação do ciclo não altera a unicidade de um ciclo.
+	      \(\{1, 2, 3\}\) e \(\{3, 2, 1\}\) são permutações de vértices que forma o mesmo ciclo, por exemplo.
+	      Portanto, \(\mathbb{E}[X_k] = \binom{n}{k}\frac{(k-1)!}{2} p^k\).
 
-	      Sabemos que \(\binom{n}{k} = \frac{n!}{k!(n-k)!} \leq \frac{n^k}{k!}\). Partindo disso, podemos afirmar que \(\mathbb{E}[X_k] = \binom{x}{k}(k-1)!p^k \leq \frac{n^k}{k!}(k-1)!p^k\).
+	      Sabemos que \(\binom{n}{k} = \frac{n!}{k!(n-k)!} \leq \frac{n^k}{k!}\). Partindo disso, podemos afirmar que \(\mathbb{E}[X_k] = \binom{n}{k}\frac{(k-1)}{2}!p^k \leq \frac{n^k}{k!}\frac{(k-1)!}{2}p^k\).
 
-	      Após alguns algebrismos podemos notar que \(\mathbb{E}[X_k] \leq \frac{(np)^k}{k}\). Como \(p << \frac{1}{n}\), temos que \(\frac{p}{1/n} = np\) tende a 0. Desse modo,
+	      Após alguns algebrismos podemos notar que \(\mathbb{E}[X_k] \leq \frac{(np)^k}{2k}\). Como \(p << \frac{1}{n}\), temos que \(\frac{p}{1/n} = np\) tende a 0. Desse modo,
 	      \(\mathbb{E}[X_k] \leq \frac{0^k}{k}\) quando \(p << \frac{1}{n}\). Como, para cada \(k\), temos que \(\mathbb{E}[X_k]\) tende a 0, o somatório \(\sum_{k=3}^n \mathbb{E}[X_k]\) também tende a 0,
 	      e concluímos que se \(p << \frac{1}{n}\), com alta probabilidade, \(\mathbb{E}[X] = 0\), isto é, a quantidade de ciclos no grafo \(G(n, p)\) é zero, o que faz do grafo
 	      acíclico, como queríamos demonstrar.
